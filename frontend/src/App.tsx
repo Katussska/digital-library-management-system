@@ -1,114 +1,18 @@
 import NavBar from './components/nav/NavBar.tsx';
 import Sidebar from './components/filter/Sidebar.tsx';
 import MainContainer from './components/main/MainContainer.tsx';
-import FilterCheckbox from './components/filter/FilterCheckbox.tsx';
-import FilterComponent from './components/filter/FilterComponent.tsx';
-import ProfileContainer from './components/main/profile/ProfileContainer.tsx';
+import Register from './components/auth/Register.tsx';
 
 function App() {
   return (
     <div className="flex flex-col h-screen">
       <NavBar />
       <div className="flex flex-1 max-h-full overflow-auto">
-        <Sidebar>
-          <FilterComponent title={'Availability'}>
-            <FilterCheckbox label={'Available'} />
-            <FilterCheckbox label={'Borrowed'} />
-          </FilterComponent>
-          <FilterComponent title={'Genre'}>
-            <FilterCheckbox label={'Horror'} />
-            <FilterCheckbox label={'Sci-Fi'} />
-            <FilterCheckbox label={'Fantasy'} />
-            <FilterCheckbox label={'Detective'} />
-          </FilterComponent>
-          <FilterComponent title={'Author'}>
-            <FilterCheckbox label={'Stephen King'} />
-            <FilterCheckbox label={'Isaac Asimov'} />
-            <FilterCheckbox label={'J.R.R. Tolkien'} />
-            <FilterCheckbox label={'Agatha Christie'} />
-          </FilterComponent>
-          <FilterComponent title={'Language'}>
-            <FilterCheckbox label={'English'} />
-            <FilterCheckbox label={'Spanish'} />
-            <FilterCheckbox label={'French'} />
-            <FilterCheckbox label={'German'} />
-          </FilterComponent>
-          <FilterComponent title={'Publisher'}>
-            <FilterCheckbox label={'Penguin Random House'} />
-            <FilterCheckbox label={'HarperCollins'} />
-            <FilterCheckbox label={'Simon & Schuster'} />
-            <FilterCheckbox label={'Macmillan'} />
-          </FilterComponent>
-          <FilterComponent title={'Rating'}>
-            <FilterCheckbox label={'⭐️⭐️⭐️⭐️⭐️'} />
-            <FilterCheckbox label={'⭐️⭐️⭐️⭐️'} />
-            <FilterCheckbox label={'⭐️⭐️⭐️'} />
-          </FilterComponent>
-        </Sidebar>
+        <Sidebar />
         <MainContainer>
-          <ProfileContainer />
-          {/*<SearchedBooks>*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits And Its Function" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits And Its Function" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits And Its Function" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits And Its Function" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits And Its Function" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits And Its Function" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits And Its Function" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits And Its Function" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits And Its Function" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits And Its Function" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits And Its Function" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits And Its Function" cover="cover.png" />*/}
-          {/*  <Book title="Atomic Habits" cover="cover.png" />*/}
-          {/*</SearchedBooks>*/}
+          <Register />
+          {/*<ProfileContainer />*/}
+          {/*<SearchedBooks />*/}
           {/*<BookDetail title="Atomic Habits" cover="cover.png" genre="Self-help"*/}
           {/*            author="James Clear"*/}
           {/*            publisher="Avery"*/}
