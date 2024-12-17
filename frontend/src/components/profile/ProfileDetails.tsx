@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function ProfileDetails() {
   const [user, setUser] = useState({ name: '', email: '', phone: '', registrationDate: '' });
