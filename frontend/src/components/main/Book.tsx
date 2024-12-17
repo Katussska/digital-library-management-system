@@ -1,7 +1,7 @@
 export default function Book({ title, cover }: { title: string, cover: string }) {
   return (
     <div
-      className="flex flex-col min-w-44 w-44 max-h-60 bg-white rounded-lg border-2 border-blue-600 p-3 m-3 items-center">
+      className="flex flex-col min-w-44 w-44 max-h-60 bg-white rounded-lg border-2 border-blue-600 p-3 m-1.5 items-center">
       <img src={cover} alt="book cover" className="w-full h-3/4 object-contain" />
       <div className="flex flex-col p-2 items-center text-center h-1/4 justify-center">
         <h6 className="text-sm font-semibold">{title}</h6>

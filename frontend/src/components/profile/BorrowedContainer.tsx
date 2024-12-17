@@ -1,4 +1,4 @@
-import BorrowedBook from './BorrowedBook';
+import BorrowedBook from './BorrowedBook.tsx';
 
 export default function BorrowedContainer() {
   return (
