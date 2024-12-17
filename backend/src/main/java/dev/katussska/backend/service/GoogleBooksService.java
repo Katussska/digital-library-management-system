@@ -19,7 +19,7 @@ public class GoogleBooksService {
 
     public String searchBooks(String query) {
         String url = UriComponentsBuilder.fromHttpUrl("https://www.googleapis.com/books/v1/volumes")
-                .queryParam("q", query) // zde můžeš přidat parametry, jako je název, autor atd.
+                .queryParam("q", query)
                 .queryParam("key", apiKey)
                 .toUriString();
 

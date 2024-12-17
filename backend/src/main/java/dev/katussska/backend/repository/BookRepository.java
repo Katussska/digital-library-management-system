@@ -1,6 +1,6 @@
 package dev.katussska.backend.repository;
 
-import dev.katussska.backend.entities.Book;
+import dev.katussska.backend.entity.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
