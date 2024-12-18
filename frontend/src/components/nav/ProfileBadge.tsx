@@ -17,14 +17,20 @@ export default function ProfileBadge() {
     navigate('/profile');
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    window.location.reload();
+  };
+
   return (
     <div>
-      <div className="flex items-center gap-4 cursor-pointer" onClick={handleProfileClick}>
+      <div className="flex items-center gap-4">
         <div className="font-medium dark:text-white flex flex-col items-end">
           <div>{user.name}</div>
-          <div className="text-sm text-gray-500 dark:text-gray-400">{user.email}</div>
+          <div className="text-sm text-gray-500 dark:text-gray-400 cursor-pointer" onClick={handleLogout}>Log out</div>
         </div>
-        <img className="w-10 h-10 rounded-full" src="/avatar.png" alt="avatar" />
+        <img className="w-10 h-10 rounded-full cursor-pointer" src="/avatar.png" alt="avatar"
+             onClick={handleProfileClick} />
       </div>
     </div>
   );
