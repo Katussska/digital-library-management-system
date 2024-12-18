@@ -1,6 +1,6 @@
 export const fetchBooks = async (url: string) => {
   try {
-    const response = await fetch(process.env.REACT_APP_API_URL + url, {
+    const response = await fetch('http://localhost:8080/books/' + url, {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

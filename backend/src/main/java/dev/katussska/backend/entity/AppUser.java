@@ -1,5 +1,6 @@
 package dev.katussska.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -20,12 +21,13 @@ public class AppUser {
     private Integer version;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore  // Zamezení rekurzi při serializaci
     private List<Loan> loans;
 
+    // Constructors, getters, and setters
     public AppUser() {
     }
 
-    // Constructor with all fields
     public AppUser(Long id, String name, String email, String phone, String password, String registrationDate, Integer version, List<Loan> loans) {
         this.id = id;
         this.name = name;
@@ -37,7 +39,6 @@ public class AppUser {
         this.loans = loans;
     }
 
-    // Constructor without id and version (for new entities)
     public AppUser(String name, String email, String phone, String password, String registrationDate, List<Loan> loans) {
         this.name = name;
         this.email = email;

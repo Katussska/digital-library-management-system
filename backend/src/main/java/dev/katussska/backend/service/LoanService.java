@@ -9,6 +9,7 @@ import dev.katussska.backend.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class LoanService {
@@ -43,11 +44,17 @@ public class LoanService {
         loan.setUser(appUser);
         loan.setBook(book);
         loan.setLoanDate(LocalDate.now());
+        loan.setBookName(book.getTitle());
 
         // Aktualizuj dostupnost knihy
         book.setAvailable(false);  // Kniha už není dostupná
         bookRepository.save(book);
 
         return loanRepository.save(loan);
+    }
+
+
+    public List<Loan> getLoansByUserId(Long id) {
+        return loanRepository.findByUserId(id);
     }
 }

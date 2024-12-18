@@ -24,7 +24,7 @@ export default function ProfileBadge() {
           <div>{user.name}</div>
           <div className="text-sm text-gray-500 dark:text-gray-400">{user.email}</div>
         </div>
-        <img className="w-10 h-10 rounded-full" src="avatar.png" alt="avatar" />
+        <img className="w-10 h-10 rounded-full" src="/avatar.png" alt="avatar" />
       </div>
     </div>
   );

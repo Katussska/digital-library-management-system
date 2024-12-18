@@ -1,5 +1,6 @@
 package dev.katussska.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
@@ -13,16 +14,21 @@ public class Loan {
     private Double amount;
     private String startDate;
     private String endDate;
+    private String bookName;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore  // Zamezení rekurzi při serializaci
     private AppUser user;
 
     @ManyToOne
     @JoinColumn(name = "book_id")
+    @JsonIgnore  // Zamezení rekurzi při serializaci
     private Book book;
 
     private LocalDate loanDate;
+
+
 
     // Getters and Setters
     public Long getId() {
@@ -87,5 +93,13 @@ public class Loan {
 
     public void setLoanDate(LocalDate loanDate) {
         this.loanDate = loanDate;
+    }
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
     }
 }

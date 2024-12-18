@@ -13,7 +13,7 @@ export default function NavBar() {
 
   return (
     <nav className="bg-white flex h-20 items-center w-full p-5 justify-between">
-      <img className="h-full object-contain cursor-pointer" src="logo.png" alt="logo" onClick={handleLogoClick} />
+      <img className="h-full object-contain cursor-pointer" src="/logo.png" alt="logo" onClick={handleLogoClick} />
       <SearchBar />
       {user ? <ProfileBadge /> : <Signing />}
     </nav>

@@ -18,32 +18,20 @@ interface BookType {
   description: string;
 }
 
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
-
-export default function SearchedBooks() {
+export default function FilteredBooks() {
   const [books, setBooks] = useState<BookType[]>([]);
-  const query = useQuery();
-  const title = query.get('title');
+  const location = useLocation();
 
   useEffect(() => {
     const fetchBooks = async () => {
-      try {
-        const response = await fetch(`http://localhost:8080/books/search/title?title=${title}`);
-        const data = await response.json();
-        const uniqueBooks = Array.from(new Set(data.map((book: BookType) => book.id)))
-          .map(id => data.find((book: BookType) => book.id === id));
-        setBooks(uniqueBooks);
-      } catch (error) {
-        console.error('Error fetching books:', error);
-      }
+      const params = new URLSearchParams(location.search);
+      const response = await fetch(`http://localhost:8080/books/filter?${params.toString()}`);
+      const data = await response.json();
+      setBooks(data);
     };
 
-    if (title) {
-      fetchBooks().then(r => r);
-    }
-  }, [title]);
+    fetchBooks().then(r => r);
+  }, [location.search]);
 
   return (
     <div className="flex flex-col h-screen">

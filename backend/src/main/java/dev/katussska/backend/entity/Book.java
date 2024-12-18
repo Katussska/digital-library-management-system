@@ -2,6 +2,7 @@ package dev.katussska.backend.entity;
 
 import jakarta.persistence.*;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Book {
@@ -17,11 +18,12 @@ public class Book {
     private Integer rating;
     private String language;
     private String publisher;
-    private String publishedDate;  // Změněno z LocalDate na String (podle API)
-    private Integer pageCount;  // Změněno z int na Integer (JPA preferuje objekty místo primitivních typů)
+    private String publishedDate;
+    private Integer pageCount;
     private String description;
 
     @OneToMany(mappedBy = "book")
+    @JsonIgnore  // Zamezení rekurzi při serializaci
     private List<Loan> loans;
 
     // Getters and Setters
